@@ -15,6 +15,8 @@ st.set_page_config(
     page_title="Tool Comparison - Semantic Kernel", page_icon="ocelot.ico"
 )
 
+if "chat_history" not in st.session_state:
+    st.session_state["chat_history"] = []
 
 logger, handler = get_in_memory_logger()
 
@@ -25,9 +27,6 @@ kernel.add_chat_service(
         "ocelot-gpt4", app_settings.chat_api_endpoint, app_settings.chat_api_key
     ),
 )
-
-if "chat_history" not in st.session_state:
-    st.session_state["chat_history"] = []
 
 
 def show_chat_history():
@@ -66,9 +65,10 @@ if prompt:
     append_to_chat_history("user", prompt)
 
     prompt_fn = kernel.create_semantic_function(prompt)
-    response = prompt_fn()
+    llm_response = prompt_fn()
     role = "assistant"
+    response = llm_response.result
 
-    append_to_chat_history(role, response.result, handler.get_logs())
+    append_to_chat_history(role, response, handler.get_logs())
 
 show_chat_history()

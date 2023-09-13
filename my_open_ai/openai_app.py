@@ -11,13 +11,13 @@ app_settings = AppSettings()
 
 st.set_page_config(page_title="Tool Comparison - Raw OpenAI", page_icon="ocelot.ico")
 
+if "chat_history" not in st.session_state:
+    st.session_state["chat_history"] = []
+
 openai.api_base = app_settings.chat_api_endpoint
 openai.api_type = "azure"
 openai.api_key = app_settings.chat_api_key
 openai.api_version = "2023-07-01-preview"
-
-if "chat_history" not in st.session_state:
-    st.session_state["chat_history"] = []
 
 
 def show_chat_history():
@@ -55,12 +55,12 @@ prompt = st.chat_input("Ask a question")
 if prompt:
     append_to_chat_history("user", prompt)
 
-    completion = openai.ChatCompletion.create(
+    llm_response = openai.ChatCompletion.create(
         engine=app_settings.chat_model, messages=get_conversation()
     )
-    response = completion.choices[0].message.content
-    role = completion.choices[0].message.role
+    role = llm_response.choices[0].message.role
+    response = llm_response.choices[0].message.content
 
-    append_to_chat_history(role, response, completion)
+    append_to_chat_history(role, response, llm_response)
 
 show_chat_history()
