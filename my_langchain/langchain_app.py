@@ -104,7 +104,7 @@ if prompt:
 
     # OPENAI_FUNCTIONS should take advantage of the "function calling" feature in the newest
     # gpt3.5 and gpt4 models.
-    tools = [api_tool, chat_tool]
+    tools = [chat_tool, api_tool]
     agent = initialize_agent(
         tools=tools,
         agent_type=AgentType.OPENAI_FUNCTIONS,
