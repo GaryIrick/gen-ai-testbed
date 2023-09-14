@@ -4,14 +4,25 @@ load_dotenv()
 
 import streamlit as st
 
+
 # We don't really need the langchain import here, but if we don't do it,
-# we get spurious errors, like:
+# we get spurious errors running this in streamlit, like:
 #    - AttributeError: module 'langchain' has no attribute 'verbose'
 #    - ImportError: cannot import name 'ChatOpenAI' from partially initialized module 'langchain.chat_models' (most likely due to a circular import)
 import langchain
 
+# Show the blow-by-blow as the agent runs.
+langchain.debug = True
+
 from langchain.schema import AIMessage, HumanMessage
+from langchain.prompts.chat import MessagesPlaceholder, HumanMessagePromptTemplate
 from langchain.chat_models import AzureChatOpenAI
+from langchain.chains import APIChain, LLMChain
+from langchain.tools import Tool
+from langchain.agents import initialize_agent, AgentType
+from langchain.memory import ConversationBufferMemory
+from langchain.prompts import PromptTemplate, ChatPromptTemplate
+from my_langchain.callback_handler import CustomCallbackHandler
 
 from settings import AppSettings
 
@@ -22,7 +33,10 @@ st.set_page_config(page_title="Tool Comparison - Langchain", page_icon="ocelot.i
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = []
 
-chat = AzureChatOpenAI(
+with open("resources/hots_api_spec.json") as api_spec_file:
+    api_spec = api_spec_file.read()
+
+llm = AzureChatOpenAI(
     openai_api_base=app_settings.chat_api_endpoint,
     openai_api_key=app_settings.chat_api_key,
     openai_api_type="azure",
@@ -68,14 +82,49 @@ def get_conversation():
 prompt = st.chat_input("Ask a question")
 
 if prompt:
-    append_to_chat_history("user", prompt)
     conversation = get_conversation()
+    append_to_chat_history("user", prompt)
 
-    llm_response = chat.predict_messages(conversation)
+    memory = ConversationBufferMemory(memory_key="chat_history")
 
-    role = llm_response.type
-    response = llm_response.content
+    llm_chain = LLMChain(
+        llm=llm, prompt=PromptTemplate.from_template("Answer this question: {content}")
+    )
+    chat_tool = Tool.from_function(
+        llm_chain.run,
+        name="chat",
+        description="uses chat to answer general knowledge questions",
+    )
+    api_chain = APIChain.from_llm_and_api_docs(llm, api_spec)
+    api_tool = Tool.from_function(
+        api_chain.run,
+        name="api",
+        description="an API that can answer questions about win rates for Heroes of the Storm",
+    )
 
-    append_to_chat_history("ai", response, {"type": role, "content": response})
+    # OPENAI_FUNCTIONS should take advantage of the "function calling" feature in the newest
+    # gpt3.5 and gpt4 models.
+    tools = [api_tool, chat_tool]
+    agent = initialize_agent(
+        tools=tools,
+        agent_type=AgentType.OPENAI_FUNCTIONS,
+        llm=llm,
+        memory=memory,
+    )
+
+    prompt_template = ChatPromptTemplate.from_messages(
+        [
+            # We would place the system message here, if we had one.
+            MessagesPlaceholder(variable_name="chat_history"),
+            HumanMessagePromptTemplate.from_template("{human_input}"),
+        ]
+    )
+
+    handler = CustomCallbackHandler()
+    full_prompt = prompt_template.format(human_input=prompt, chat_history=conversation)
+    response = agent.run(input=full_prompt, callbacks=[handler])
+    role = "ai"
+
+    append_to_chat_history("ai", response, handler.events)
 
 show_chat_history()
