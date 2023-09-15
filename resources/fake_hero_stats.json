@@ -1,0 +1,544 @@
+{
+  "heroes": [
+    {
+      "name": "Alarak",
+      "role": "Melee Assassin",
+      "winRate": 0.5031847133757962,
+      "gamesPlayed": 3454
+    },
+    {
+      "name": "Illidan",
+      "role": "Melee Assassin",
+      "winRate": 0.5059625212947189,
+      "gamesPlayed": 2935
+    },
+    {
+      "name": "Auriel",
+      "role": "Healer",
+      "winRate": 0.5046654225539856,
+      "gamesPlayed": 3751
+    },
+    {
+      "name": "Nova",
+      "role": "Ranged Assassin",
+      "winRate": 0.4570230607966457,
+      "gamesPlayed": 2385
+    },
+    {
+      "name": "Cassia",
+      "role": "Ranged Assassin",
+      "winRate": 0.4672353625436216,
+      "gamesPlayed": 2579
+    },
+    {
+      "name": "Ana",
+      "role": "Healer",
+      "winRate": 0.4604904632152589,
+      "gamesPlayed": 2936
+    },
+    {
+      "name": "Johanna",
+      "role": "Tank",
+      "winRate": 0.5275356373705261,
+      "gamesPlayed": 9751
+    },
+    {
+      "name": "Kel'Thuzad",
+      "role": "Ranged Assassin",
+      "winRate": 0.4992067689053411,
+      "gamesPlayed": 3782
+    },
+    {
+      "name": "Deckard",
+      "role": "Healer",
+      "winRate": 0.47503201024327785,
+      "gamesPlayed": 3905
+    },
+    {
+      "name": "Dehaka",
+      "role": "Bruiser",
+      "winRate": 0.4982761749228815,
+      "gamesPlayed": 5511
+    },
+    {
+      "name": "Leoric",
+      "role": "Bruiser",
+      "winRate": 0.5383663366336634,
+      "gamesPlayed": 7272
+    },
+    {
+      "name": "Kael'thas",
+      "role": "Ranged Assassin",
+      "winRate": 0.48156115550092193,
+      "gamesPlayed": 6508
+    },
+    {
+      "name": "Anub'arak",
+      "role": "Tank",
+      "winRate": 0.5126482213438736,
+      "gamesPlayed": 7590
+    },
+    {
+      "name": "Yrel",
+      "role": "Bruiser",
+      "winRate": 0.48026315789473684,
+      "gamesPlayed": 1520
+    },
+    {
+      "name": "Falstad",
+      "role": "Ranged Assassin",
+      "winRate": 0.5048990498812351,
+      "gamesPlayed": 6736
+    },
+    {
+      "name": "Alexstrasza",
+      "role": "Healer",
+      "winRate": 0.4871589085072231,
+      "gamesPlayed": 2492
+    },
+    {
+      "name": "Imperius",
+      "role": "Bruiser",
+      "winRate": 0.48032464338416136,
+      "gamesPlayed": 4066
+    },
+    {
+      "name": "Tychus",
+      "role": "Ranged Assassin",
+      "winRate": 0.5048582995951417,
+      "gamesPlayed": 7410
+    },
+    {
+      "name": "The Butcher",
+      "role": "Melee Assassin",
+      "winRate": 0.48535564853556484,
+      "gamesPlayed": 2868
+    },
+    {
+      "name": "Mei",
+      "role": "Tank",
+      "winRate": 0.49862637362637363,
+      "gamesPlayed": 4368
+    },
+    {
+      "name": "Xul",
+      "role": "Bruiser",
+      "winRate": 0.5299856527977045,
+      "gamesPlayed": 3485
+    },
+    {
+      "name": "Zeratul",
+      "role": "Melee Assassin",
+      "winRate": 0.5192372030779525,
+      "gamesPlayed": 2989
+    },
+    {
+      "name": "Gazlowe",
+      "role": "Bruiser",
+      "winRate": 0.518848167539267,
+      "gamesPlayed": 3820
+    },
+    {
+      "name": "Azmodan",
+      "role": "Ranged Assassin",
+      "winRate": 0.49943772842282824,
+      "gamesPlayed": 7114
+    },
+    {
+      "name": "Zagara",
+      "role": "Ranged Assassin",
+      "winRate": 0.5028628329599203,
+      "gamesPlayed": 4017
+    },
+    {
+      "name": "Tyrande",
+      "role": "Healer",
+      "winRate": 0.5077812361049355,
+      "gamesPlayed": 4498
+    },
+    {
+      "name": "Murky",
+      "role": "Melee Assassin",
+      "winRate": 0.4665286404416839,
+      "gamesPlayed": 1449
+    },
+    {
+      "name": "Rexxar",
+      "role": "Bruiser",
+      "winRate": 0.5566361556064073,
+      "gamesPlayed": 1748
+    },
+    {
+      "name": "Ragnaros",
+      "role": "Bruiser",
+      "winRate": 0.5112616736861381,
+      "gamesPlayed": 5461
+    },
+    {
+      "name": "The Lost Vikings",
+      "role": "Support",
+      "winRate": 0.5212981744421906,
+      "gamesPlayed": 986
+    },
+    {
+      "name": "Anduin",
+      "role": "Healer",
+      "winRate": 0.48133004166023763,
+      "gamesPlayed": 12962
+    },
+    {
+      "name": "Stukov",
+      "role": "Healer",
+      "winRate": 0.4725342360363133,
+      "gamesPlayed": 6499
+    },
+    {
+      "name": "Gall",
+      "role": "Ranged Assassin",
+      "winRate": 0.522697795071336,
+      "gamesPlayed": 771
+    },
+    {
+      "name": "Malthael",
+      "role": "Bruiser",
+      "winRate": 0.49722735674676527,
+      "gamesPlayed": 3246
+    },
+    {
+      "name": "Samuro",
+      "role": "Melee Assassin",
+      "winRate": 0.5226003047232097,
+      "gamesPlayed": 1969
+    },
+    {
+      "name": "Jaina",
+      "role": "Ranged Assassin",
+      "winRate": 0.5091997663551402,
+      "gamesPlayed": 6848
+    },
+    {
+      "name": "Diablo",
+      "role": "Tank",
+      "winRate": 0.4935417446649195,
+      "gamesPlayed": 10684
+    },
+    {
+      "name": "Artanis",
+      "role": "Bruiser",
+      "winRate": 0.50050075112669,
+      "gamesPlayed": 7988
+    },
+    {
+      "name": "Maiev",
+      "role": "Melee Assassin",
+      "winRate": 0.5082872928176796,
+      "gamesPlayed": 2353
+    },
+    {
+      "name": "Cho",
+      "role": "Tank",
+      "winRate": 0.522697795071336,
+      "gamesPlayed": 771
+    },
+    {
+      "name": "Lunara",
+      "role": "Ranged Assassin",
+      "winRate": 0.48485775466503517,
+      "gamesPlayed": 3269
+    },
+    {
+      "name": "Probius",
+      "role": "Ranged Assassin",
+      "winRate": 0.5304347826086957,
+      "gamesPlayed": 575
+    },
+    {
+      "name": "Raynor",
+      "role": "Ranged Assassin",
+      "winRate": 0.494015047879617,
+      "gamesPlayed": 5848
+    },
+    {
+      "name": "Uther",
+      "role": "Healer",
+      "winRate": 0.49830508474576274,
+      "gamesPlayed": 3835
+    },
+    {
+      "name": "Nazeebo",
+      "role": "Ranged Assassin",
+      "winRate": 0.5035904131306538,
+      "gamesPlayed": 10723
+    },
+    {
+      "name": "Genji",
+      "role": "Ranged Assassin",
+      "winRate": 0.49120492524186454,
+      "gamesPlayed": 4548
+    },
+    {
+      "name": "Mephisto",
+      "role": "Ranged Assassin",
+      "winRate": 0.5293079096045198,
+      "gamesPlayed": 2832
+    },
+    {
+      "name": "Sgt. Hammer",
+      "role": "Ranged Assassin",
+      "winRate": 0.5256475368207212,
+      "gamesPlayed": 1969
+    },
+    {
+      "name": "Sylvanas",
+      "role": "Ranged Assassin",
+      "winRate": 0.5035788501500809,
+      "gamesPlayed": 8662
+    },
+    {
+      "name": "Tassadar",
+      "role": "Ranged Assassin",
+      "winRate": 0.499184339314845,
+      "gamesPlayed": 6130
+    },
+    {
+      "name": "Mal'Ganis",
+      "role": "Tank",
+      "winRate": 0.472896231285493,
+      "gamesPlayed": 1937
+    },
+    {
+      "name": "Sonya",
+      "role": "Bruiser",
+      "winRate": 0.4915068493150685,
+      "gamesPlayed": 5475
+    },
+    {
+      "name": "Qhira",
+      "role": "Melee Assassin",
+      "winRate": 0.4812807881773399,
+      "gamesPlayed": 2030
+    },
+    {
+      "name": "Arthas",
+      "role": "Tank",
+      "winRate": 0.47202441505595116,
+      "gamesPlayed": 2949
+    },
+    {
+      "name": "Rehgar",
+      "role": "Healer",
+      "winRate": 0.573608617594255,
+      "gamesPlayed": 12254
+    },
+    {
+      "name": "Lt. Morales",
+      "role": "Healer",
+      "winRate": 0.4842681258549932,
+      "gamesPlayed": 2924
+    },
+    {
+      "name": "Zul'jin",
+      "role": "Ranged Assassin",
+      "winRate": 0.5249148870318787,
+      "gamesPlayed": 6462
+    },
+    {
+      "name": "Varian",
+      "role": "Bruiser",
+      "winRate": 0.5002700075602117,
+      "gamesPlayed": 9259
+    },
+    {
+      "name": "Fenix",
+      "role": "Ranged Assassin",
+      "winRate": 0.5006527415143603,
+      "gamesPlayed": 1532
+    },
+    {
+      "name": "Tyrael",
+      "role": "Tank",
+      "winRate": 0.48255352894528153,
+      "gamesPlayed": 2522
+    },
+    {
+      "name": "Muradin",
+      "role": "Tank",
+      "winRate": 0.5105176663927691,
+      "gamesPlayed": 12170
+    },
+    {
+      "name": "Li Li",
+      "role": "Healer",
+      "winRate": 0.46725499303297724,
+      "gamesPlayed": 4306
+    },
+    {
+      "name": "Whitemane",
+      "role": "Healer",
+      "winRate": 0.5125703564727955,
+      "gamesPlayed": 2665
+    },
+    {
+      "name": "Valeera",
+      "role": "Melee Assassin",
+      "winRate": 0.4637767220902613,
+      "gamesPlayed": 1684
+    },
+    {
+      "name": "Junkrat",
+      "role": "Ranged Assassin",
+      "winRate": 0.49988806805462277,
+      "gamesPlayed": 4467
+    },
+    {
+      "name": "Medivh",
+      "role": "Support",
+      "winRate": 0.4157441574415744,
+      "gamesPlayed": 1626
+    },
+    {
+      "name": "Hogger",
+      "role": "Bruiser",
+      "winRate": 0.5298522167487685,
+      "gamesPlayed": 5075
+    },
+    {
+      "name": "D.Va",
+      "role": "Bruiser",
+      "winRate": 0.5051669316375199,
+      "gamesPlayed": 2516
+    },
+    {
+      "name": "Stitches",
+      "role": "Tank",
+      "winRate": 0.49026047565118913,
+      "gamesPlayed": 8830
+    },
+    {
+      "name": "Greymane",
+      "role": "Ranged Assassin",
+      "winRate": 0.4995659722222222,
+      "gamesPlayed": 4608
+    },
+    {
+      "name": "Lúcio",
+      "role": "Healer",
+      "winRate": 0.5035685963521015,
+      "gamesPlayed": 5044
+    },
+    {
+      "name": "Zarya",
+      "role": "Support",
+      "winRate": 0.48032128514056227,
+      "gamesPlayed": 1245
+    },
+    {
+      "name": "Thrall",
+      "role": "Bruiser",
+      "winRate": 0.4747583243823845,
+      "gamesPlayed": 4655
+    },
+    {
+      "name": "Deathwing",
+      "role": "Bruiser",
+      "winRate": 0.4895620139173148,
+      "gamesPlayed": 2443
+    },
+    {
+      "name": "Li-Ming",
+      "role": "Ranged Assassin",
+      "winRate": 0.47551820728291316,
+      "gamesPlayed": 8925
+    },
+    {
+      "name": "E.T.C.",
+      "role": "Tank",
+      "winRate": 0.48039825762289984,
+      "gamesPlayed": 6428
+    },
+    {
+      "name": "Chen",
+      "role": "Bruiser",
+      "winRate": 0.48322147651006714,
+      "gamesPlayed": 1341
+    },
+    {
+      "name": "Kerrigan",
+      "role": "Melee Assassin",
+      "winRate": 0.5567940552016986,
+      "gamesPlayed": 1884
+    },
+    {
+      "name": "Chromie",
+      "role": "Ranged Assassin",
+      "winRate": 0.48510427010923535,
+      "gamesPlayed": 4028
+    },
+    {
+      "name": "Orphea",
+      "role": "Ranged Assassin",
+      "winRate": 0.5161778046567886,
+      "gamesPlayed": 3307
+    },
+    {
+      "name": "Blaze",
+      "role": "Tank",
+      "winRate": 0.5038048780487805,
+      "gamesPlayed": 5125
+    },
+    {
+      "name": "Gul'dan",
+      "role": "Ranged Assassin",
+      "winRate": 0.4802816901408451,
+      "gamesPlayed": 4260
+    },
+    {
+      "name": "Kharazim",
+      "role": "Healer",
+      "winRate": 0.49382716049382713,
+      "gamesPlayed": 2754
+    },
+    {
+      "name": "Tracer",
+      "role": "Ranged Assassin",
+      "winRate": 0.5169204737732657,
+      "gamesPlayed": 2364
+    },
+    {
+      "name": "Hanzo",
+      "role": "Ranged Assassin",
+      "winRate": 0.47707789787551247,
+      "gamesPlayed": 8049
+    },
+    {
+      "name": "Garrosh",
+      "role": "Tank",
+      "winRate": 0.48683760683760685,
+      "gamesPlayed": 5850
+    },
+    {
+      "name": "Abathur",
+      "role": "Support",
+      "winRate": 0.4437596302003082,
+      "gamesPlayed": 3894
+    },
+    {
+      "name": "Malfurion",
+      "role": "Healer",
+      "winRate": 0.4893816951700808,
+      "gamesPlayed": 5321
+    },
+    {
+      "name": "Brightwing",
+      "role": "Healer",
+      "winRate": 0.49766331908123695,
+      "gamesPlayed": 10057
+    },
+    {
+      "name": "Valla",
+      "role": "Ranged Assassin",
+      "winRate": 0.5115435586245379,
+      "gamesPlayed": 14337
+    }
+  ]
+}

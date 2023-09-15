@@ -1,19 +1,13 @@
 from dotenv import load_dotenv
 
-load_dotenv()
-
-import streamlit as st
-
-
 # We don't really need the langchain import here, but if we don't do it,
 # we get spurious errors running this in streamlit, like:
 #    - AttributeError: module 'langchain' has no attribute 'verbose'
 #    - ImportError: cannot import name 'ChatOpenAI' from partially initialized module 'langchain.chat_models' (most likely due to a circular import)
 import langchain
 
-# Show the blow-by-blow as the agent runs.
-langchain.debug = True
 
+import streamlit as st
 from langchain.schema import AIMessage, HumanMessage
 from langchain.prompts.chat import MessagesPlaceholder, HumanMessagePromptTemplate
 from langchain.chat_models import AzureChatOpenAI
@@ -25,8 +19,12 @@ from langchain.prompts import PromptTemplate, ChatPromptTemplate
 from langchain.retrievers import AzureCognitiveSearchRetriever
 
 from my_langchain.callback_handler import CustomCallbackHandler
-
 from settings import AppSettings
+
+# Show the blow-by-blow as the agent runs.
+langchain.debug = True
+
+load_dotenv()
 
 app_settings = AppSettings()
 

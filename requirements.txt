@@ -1,7 +1,10 @@
+python-dotenv
 streamlit
 openai
 langchain
 semantic-kernel
+# These versions need to be just right for langchain, it doesn't work with 2.0.
+# I believe semantic kernel also requires < 2.0, but I didn't test it.
 pydantic==1.10.12
 openapi-schema-pydantic==1.2
 
