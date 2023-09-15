@@ -3,6 +3,9 @@ import json
 from dotenv import load_dotenv
 import streamlit as st
 import openai
+import requests
+from azure.core.credentials import AzureKeyCredential
+from azure.search.documents import SearchClient
 
 from settings import AppSettings
 
@@ -31,17 +34,52 @@ def append_to_chat_history(
 
 
 def get_heroes_stats(start_date, end_date):
-    with open("resources/fake_hero_stats.json") as fake_stats:
-        return json.loads(fake_stats.read())
+    url = f"{app_settings.heroes_api_endpoint}/hero-stats"
+    params = {"startDate": start_date, "endDate": end_date}
+    req = requests.get(url, params)
+    return req.json()
 
 
-def search_for_hotel_information(query):
-    return [
-        {"content": "The JW Marriott is the best hotel in Indianapolis for GenCon."},
-        {
-            "content": "The Watergate is a good hotel if you are staying in Washington, DC."
-        },
-    ]
+# https://learn.microsoft.com/en-us/python/api/overview/azure/search-documents-readme?view=azure-python
+
+
+def search_for_hotel_information(query, count=3):
+    credential = AzureKeyCredential(app_settings.search_api_key)
+    client = SearchClient(
+        endpoint=app_settings.search_api_endpoint,
+        index_name=app_settings.search_index,
+        credential=credential,
+    )
+
+    results = list(
+        client.search(
+            search_text=query,
+            top=int(count),
+            select=[
+                "HotelName",
+                "Description",
+                "Address",
+                "Rating",
+                "Rooms",
+            ],
+        )
+    )
+
+    # Trim down the data we return to save on tokens.
+    for result in results:
+        del result["@search.score"]
+        del result["@search.highlights"]
+
+        result["Rooms"] = [
+            {
+                "Description": room["Description"],
+                "BaseRate": room["BaseRate"],
+                "SleepsCount": room["SleepsCount"],
+            }
+            for room in result["Rooms"]
+        ]
+
+    return results
 
 
 # See this link for more about function calling:
@@ -76,13 +114,19 @@ available_functions = [
                 "query": {
                     "type": "string",
                     "description": "a query to use to find information about hotels",
-                }
+                },
+                "count": {
+                    "type": "string",
+                    "description": "the number of results to find",
+                },
             },
             "required": ["query"],
         },
     },
 ]
 
+# All of these functions return a dictionary created from a JSON response.
+# The data will be serialized and sent back to the LLM.
 map_of_available_functions = {
     "get_heroes_winrate_stats": get_heroes_stats,
     "get_hotel_information": search_for_hotel_information,

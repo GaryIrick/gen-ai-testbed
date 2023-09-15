@@ -3,6 +3,9 @@ streamlit
 openai
 langchain
 semantic-kernel
+requests
+azure-search-documents
+
 # These versions need to be just right for langchain, it doesn't work with 2.0.
 # I believe semantic kernel also requires < 2.0, but I didn't test it.
 pydantic==1.10.12
